@@ -7,15 +7,15 @@ import {
 } from 'typeorm';
 
 @Entity({
-  name: 'concerthall',
+  name: 'concert_hall',
 })
 export class ConcertHall {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: 'varchar', length: 50 })
+  @Column({ type: 'varchar', length: 50, nullable: false })
   name: string;
 
-  @Column({ type: 'simple-array' })
+  @Column({ type: 'simple-array', nullable: false })
   seats: string[];
 }

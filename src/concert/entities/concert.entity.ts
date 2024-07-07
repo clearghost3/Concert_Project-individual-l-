@@ -9,25 +9,25 @@ import {
 @Entity({
   name: 'concerts',
 })
-export class Concerts {
+export class Concert {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: 'int', nullable: true })
+  @Column({ type: 'int', nullable: false })
   placeId: number;
 
-  @Column({ type: 'varchar', nullable: true })
+  @Column({ type: 'varchar', nullable: false })
   name: string;
 
-  @Column({ type: 'int', nullable: true })
+  @Column({ type: 'int', nullable: false })
   price: number;
 
-  @Column({ type: 'int', nullable: true })
+  @Column({ type: 'int', nullable: false })
   runningTime: number;
 
-  @Column('json')
+  @Column({ type: 'json', nullable: false })
   seats: { seatNumber: string; status: string }[];
 
-  @Column({ type: 'int', nullable: true })
+  @Column({ type: 'int', nullable: false })
   showTime: number;
 }
