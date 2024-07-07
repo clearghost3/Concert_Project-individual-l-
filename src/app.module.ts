@@ -7,7 +7,6 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { ConcertModule } from './concert/concert.module';
-import { ReservationModule } from './g/reservation/reservation.module';
 import { ReservationModule } from './reservation/reservation.module';
 import { ConcerthallModule } from './concerthall/concerthall.module';
 
