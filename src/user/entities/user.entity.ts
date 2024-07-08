@@ -1,3 +1,4 @@
+import { Reservation } from 'src/reservation/entities/reservation.entity';
 import {
   Entity,
   Column,
@@ -44,4 +45,7 @@ export class User {
 
   @DeleteDateColumn({ type: 'date', nullable: true })
   DeletedAt: Date;
+
+  @OneToMany(() => Reservation, (reservation) => reservation.user)
+  reservations: Reservation[];
 }

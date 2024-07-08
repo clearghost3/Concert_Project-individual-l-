@@ -6,6 +6,8 @@ import {
   OneToMany,
 } from 'typeorm';
 
+import { Reservation } from 'src/reservation/entities/reservation.entity';
+
 @Entity({
   name: 'concerts',
 })
@@ -30,4 +32,7 @@ export class Concert {
 
   @Column({ type: 'int', nullable: false })
   showTime: number;
+
+  @OneToMany(() => Reservation, (reservation) => reservation.concert)
+  reservations: Reservation[];
 }
