@@ -1,9 +1,12 @@
+import { Concert } from 'src/concert/entities/concert.entity';
 import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
   Index,
   OneToMany,
+  ManyToMany,
+  ManyToOne,
 } from 'typeorm';
 
 @Entity({
@@ -18,4 +21,7 @@ export class ConcertHall {
 
   @Column({ type: 'simple-array', nullable: false })
   seats: string[];
+
+  @OneToMany(() => Concert, (concert) => concert.concerthall)
+  concert: Concert;
 }

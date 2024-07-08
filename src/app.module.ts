@@ -11,7 +11,7 @@ import { ReservationModule } from './reservation/reservation.module';
 import { ConcerthallModule } from './concerthall/concerthall.module';
 
 import { User } from './user/entities/user.entity';
-import { ConcertHall } from './concerthall/entities/concert_hall.entity';
+import { ConcertHall } from './concerthall/entities/concerthall.entity';
 import { Reservation } from './reservation/entities/reservation.entity';
 import { Concert } from './concert/entities/concert.entity';
 

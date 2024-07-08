@@ -4,9 +4,11 @@ import {
   PrimaryGeneratedColumn,
   Index,
   OneToMany,
+  ManyToOne,
 } from 'typeorm';
 
 import { Reservation } from 'src/reservation/entities/reservation.entity';
+import { ConcertHall } from 'src/concerthall/entities/concerthall.entity';
 
 @Entity({
   name: 'concerts',
@@ -35,4 +37,7 @@ export class Concert {
 
   @OneToMany(() => Reservation, (reservation) => reservation.concert)
   reservations: Reservation[];
+
+  @ManyToOne(() => ConcertHall, (concerthall) => concerthall.concert)
+  concerthall: ConcertHall;
 }
