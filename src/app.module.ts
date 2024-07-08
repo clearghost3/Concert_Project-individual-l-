@@ -10,6 +10,7 @@ import { ConcertModule } from './concert/concert.module';
 import { ReservationModule } from './reservation/reservation.module';
 import { ConcerthallModule } from './concerthall/concerthall.module';
 
+import { User } from './user/entities/user.entity';
 import { ConcertHall } from './concerthall/entities/concert_hall.entity';
 import { Reservation } from './reservation/entities/reservation.entity';
 import { Concert } from './concert/entities/concert.entity';
@@ -25,7 +26,7 @@ const typeOrmModuleOptions = {
     host: configService.get('DB_HOST'),
     port: configService.get('DB_PORT'),
     database: configService.get('DB_NAME'),
-    entities: [ConcertHall, Reservation, Concert],
+    entities: [ConcertHall, Reservation, Concert, User],
     synchronize: configService.get('DB_SYNC'),
     logging: true,
   }),

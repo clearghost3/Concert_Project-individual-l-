@@ -4,6 +4,9 @@ import {
   PrimaryGeneratedColumn,
   Index,
   OneToMany,
+  CreateDateColumn,
+  UpdateDateColumn,
+  DeleteDateColumn,
 } from 'typeorm';
 import { Role } from '../types/userRole.type';
 
@@ -11,7 +14,7 @@ import { Role } from '../types/userRole.type';
 @Entity({
   name: 'users',
 })
-export class Users {
+export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -30,12 +33,15 @@ export class Users {
   @Column({ type: 'int', nullable: false })
   age: number;
 
-  @Column({ type: 'int', nullable: false })
+  @Column({ type: 'int', nullable: false, default: 50000 })
   point: number;
 
-  @Column({ type: 'date', nullable: true })
+  @CreateDateColumn({ type: 'date', nullable: false })
   createdAt: Date;
 
-  @Column({ type: 'date', nullable: false })
+  @UpdateDateColumn({ type: 'date', nullable: true })
   updatedAt: Date;
+
+  @DeleteDateColumn({ type: 'date', nullable: true })
+  DeletedAt: Date;
 }
