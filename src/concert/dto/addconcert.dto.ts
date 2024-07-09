@@ -1,11 +1,9 @@
 import {
   IsNumber,
   IsString,
-  IsArray,
   IsNotEmpty,
-  ArrayNotEmpty,
-  ArrayMinSize,
   IsDate,
+  IsObject,
 } from 'class-validator';
 
 export class AddConcertDto {
@@ -25,11 +23,9 @@ export class AddConcertDto {
   @IsNotEmpty()
   runningTime: number;
 
-  @IsArray()
-  @ArrayNotEmpty()
-  @ArrayMinSize(1)
-  @IsString({ each: true }) //배열의 요소들이 각각 문자열인지 확인함
-  seats: string[];
+  @IsObject()
+  @IsNotEmpty()
+  seats: { [seatNumber: string]: string };
 
   @IsDate()
   @IsNotEmpty()

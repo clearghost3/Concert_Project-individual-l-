@@ -30,7 +30,7 @@ export class Concert {
   runningTime: number;
 
   @Column({ type: 'json', nullable: false })
-  seats: { seatNumber: string; status: string }[];
+  seats: { [seatNumber: string]: string };
 
   @Column({ type: 'int', nullable: false })
   showTime: number;

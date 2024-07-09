@@ -25,6 +25,9 @@ export class Reservation {
   @Index()
   concertId: number;
 
+  @Column({ type: 'varchar', length: 50, nullable: false })
+  placename: string;
+
   @Column({ type: 'varchar', nullable: false })
   seat: string;
 
