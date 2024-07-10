@@ -23,6 +23,7 @@ export class UserService {
     private readonly jwtService: JwtService,
   ) {}
 
+  //회원가입 로직
   async register(
     nickname: string,
     email: string,
@@ -31,5 +32,9 @@ export class UserService {
     age: number,
   ) {}
 
+  //로그인 로직
   async login(email: string, password: string) {}
+
+  //유저 정보 확인 로직
+  async userInfoCheck() {}
 }

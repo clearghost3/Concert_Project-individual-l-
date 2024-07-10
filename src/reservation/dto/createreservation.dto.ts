@@ -12,7 +12,7 @@ import {
 
 import { Role } from 'src/user/types/userRole.type';
 
-export declare class ReservationDto {
+export declare class CreateReservationDto {
   @IsNotEmpty({})
   @IsNumber()
   userId: number;
