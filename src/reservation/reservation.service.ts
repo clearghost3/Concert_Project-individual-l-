@@ -15,6 +15,13 @@ export class ReservationService {
     @InjectRepository(Reservation)
     private readonly reservationRepository: Repository<Reservation>,
   ) {}
+
+  //로직 구현 타일
+  //예약 조회
+  async check() {
+    return;
+  }
+
   //콘서트 예약
   async book(createReservationDto: CreateReservationDto) {
     return;

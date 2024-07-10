@@ -10,6 +10,13 @@ import { RemoveReservationDto } from './dto/removereservation.dto';
 export class ReservationController {
   constructor(private readonly reservationService: ReservationService) {}
 
+  //로직 구현 타일----------------
+  //예약 조회
+  @Get()
+  async check() {
+    return await this.reservationService.check();
+  }
+
   //에약 추가
   @Post()
   async book(createReservationDto: CreateReservationDto) {
