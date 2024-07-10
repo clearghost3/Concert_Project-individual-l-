@@ -1,6 +1,8 @@
-import { IsNotEmpty, IsNumber } from 'class-validator';
-export class RemoveConcertDto {
-  @IsNumber()
-  @IsNotEmpty()
-  id: number;
-}
+import { PickType } from '@nestjs/mapped-types';
+
+import { AddConcertDto } from './addconcert.dto';
+
+export declare class RemoveConcertDto extends PickType(AddConcertDto, [
+  'placeId',
+  'name',
+]) {}

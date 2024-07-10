@@ -6,7 +6,7 @@ import {
   IsObject,
 } from 'class-validator';
 
-export class AddConcertDto {
+export declare class AddConcertDto {
   @IsNumber()
   @IsNotEmpty()
   placeId: number;

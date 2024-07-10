@@ -1,7 +1,7 @@
 import { AddConcertDto } from './addconcert.dto';
 import { PickType } from '@nestjs/mapped-types';
 
-export declare class AddMovieShowtimeDto extends PickType(AddConcertDto, [
+export declare class AddConcertShowtimeDto extends PickType(AddConcertDto, [
   'name',
   'placeId',
   'showTime',
